@@ -29,6 +29,74 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
+      body: Container(
+        height: 130.0,
+        width: 220.0,
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 40.0,
+              color: Colors.grey.withOpacity(.2),
+              spreadRadius: 0.0,
+              offset: const Offset(10, 10),
+            ),
+          ],
+        ),
+        child: Container(
+          height: 130,
+          width: 220,
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                blurRadius: 40,
+                color: Colors.grey.withOpacity(0.2),
+                spreadRadius: 0,
+                offset: const Offset(10, 10),
+              )
+            ],
+          ),
+          child: const Card(
+            elevation: 10.0,
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 16.0,
+                vertical: 16.0,
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'HandBag LV',
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 16.0,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        r'$225',
+                        style: TextStyle(
+                          fontSize: 16.0,
+                        ),
+                      ),
+                      Icon(
+                        Icons.favorite,
+                        color: Colors.red,
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
