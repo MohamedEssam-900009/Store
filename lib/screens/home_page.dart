@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../widgets/custom_card.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -29,87 +31,23 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      body: Center(
-        child: Container(
-          height: 130.0,
-          width: 220.0,
-          decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                blurRadius: 40.0,
-                color: Colors.grey.withOpacity(.2),
-                spreadRadius: 0.0,
-                offset: const Offset(10, 10),
-              ),
-            ],
+      body: Padding(
+        padding: const EdgeInsets.only(
+          left: 16.0,
+          right: 16.0,
+          top: 65.0,
+        ),
+        child: GridView.builder(
+          clipBehavior: Clip.none,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: 1.5,
+            crossAxisSpacing: 10.0,
+            mainAxisSpacing: 100.0,
           ),
-          child: Stack(
-            clipBehavior: Clip.none,
-            children: [
-              Container(
-                height: 130,
-                width: 220,
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      blurRadius: 40,
-                      color: Colors.grey.withOpacity(0.2),
-                      spreadRadius: 0,
-                      offset: const Offset(10, 10),
-                    )
-                  ],
-                ),
-                child: const Card(
-                  elevation: 10.0,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 16.0,
-                      vertical: 16.0,
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'HandBag LV',
-                          style: TextStyle(
-                            color: Colors.grey,
-                            fontSize: 16.0,
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10.0,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              r'$225',
-                              style: TextStyle(
-                                fontSize: 16.0,
-                              ),
-                            ),
-                            Icon(
-                              Icons.favorite,
-                              color: Colors.red,
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Positioned(
-                right: 32.0,
-                top: -65.0,
-                child: Image.network(
-                  'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
-                  height: 100.0,
-                ),
-              ),
-            ],
-          ),
+          itemBuilder: (context, index) {
+            return const CustomCard();
+          },
         ),
       ),
     );
