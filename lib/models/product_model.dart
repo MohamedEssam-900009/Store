@@ -1,10 +1,10 @@
 class ProductModel {
   final int id;
-  final int title;
-  final int price;
-  final int description;
-  final int category;
-  final int image;
+  final String title;
+  final String price;
+  final String description;
+  final String category;
+  final String image;
   final RatingModel rating;
 
   ProductModel({

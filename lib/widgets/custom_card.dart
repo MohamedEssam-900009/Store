@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:store/models/product_model.dart';
 
 class CustomCard extends StatelessWidget {
-  const CustomCard({
-    super.key,
-  });
+  CustomCard({super.key, required this.product});
+
+  ProductModel product;
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +22,10 @@ class CustomCard extends StatelessWidget {
               )
             ],
           ),
-          child: const Card(
+          child: Card(
             elevation: 10.0,
             child: Padding(
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 16.0,
                 vertical: 16.0,
               ),
@@ -33,25 +34,25 @@ class CustomCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'HandBag LV',
-                    style: TextStyle(
+                    product.title.substring(0,6),
+                    style: const TextStyle(
                       color: Colors.grey,
                       fontSize: 16.0,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 3.0,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        r'$225',
-                        style: TextStyle(
+                       '\$${product.price.toString()}',
+                        style: const TextStyle(
                           fontSize: 16.0,
                         ),
                       ),
-                      Icon(
+                      const Icon(
                         Icons.favorite,
                         color: Colors.red,
                       ),
@@ -66,8 +67,9 @@ class CustomCard extends StatelessWidget {
           right: 32.0,
           top: -60.0,
           child: Image.network(
-            'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
+            product.image,
             height: 100.0,
+            width: 100.0,
           ),
         ),
       ],
