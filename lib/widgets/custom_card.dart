@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:store/models/product_model.dart';
+import 'package:store/screens/update_product_page.dart';
 
+// ignore: must_be_immutable
 class CustomCard extends StatelessWidget {
   CustomCard({super.key, required this.product});
 
@@ -8,71 +10,76 @@ class CustomCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      clipBehavior: Clip.none,
-      children: [
-        Container(
-          decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                blurRadius: 40,
-                color: Colors.grey.withOpacity(0.1),
-                spreadRadius: 0,
-                offset: const Offset(1, 1),
-              )
-            ],
-          ),
-          child: Card(
-            elevation: 10.0,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 16.0,
-                vertical: 16.0,
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    product.title.substring(0,6),
-                    style: const TextStyle(
-                      color: Colors.grey,
-                      fontSize: 16.0,
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, UpdateProductPage.id);
+      },
+      child: Stack(
+        clipBehavior: Clip.none,
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  blurRadius: 40,
+                  color: Colors.grey.withOpacity(0.1),
+                  spreadRadius: 0,
+                  offset: const Offset(1, 1),
+                )
+              ],
+            ),
+            child: Card(
+              elevation: 10.0,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16.0,
+                  vertical: 16.0,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      product.title.substring(0, 6),
+                      style: const TextStyle(
+                        color: Colors.grey,
+                        fontSize: 16.0,
+                      ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 3.0,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                       '\$${product.price.toString()}',
-                        style: const TextStyle(
-                          fontSize: 16.0,
+                    const SizedBox(
+                      height: 3.0,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          '\$${product.price.toString()}',
+                          style: const TextStyle(
+                            fontSize: 16.0,
+                          ),
                         ),
-                      ),
-                      const Icon(
-                        Icons.favorite,
-                        color: Colors.red,
-                      ),
-                    ],
-                  )
-                ],
+                        const Icon(
+                          Icons.favorite,
+                          color: Colors.red,
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               ),
             ),
           ),
-        ),
-        Positioned(
-          right: 32.0,
-          top: -60.0,
-          child: Image.network(
-            product.image,
-            height: 100.0,
-            width: 100.0,
+          Positioned(
+            right: 32.0,
+            top: -60.0,
+            child: Image.network(
+              product.image,
+              height: 100.0,
+              width: 100.0,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
