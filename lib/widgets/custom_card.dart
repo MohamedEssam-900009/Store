@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:store/models/product_model.dart';
-import 'package:store/screens/update_product_page.dart';
+
+import '../models/product_model.dart';
+import '../screens/update_product_page.dart';
 
 // ignore: must_be_immutable
 class CustomCard extends StatelessWidget {
@@ -50,9 +51,7 @@ class CustomCard extends StatelessWidget {
                         fontSize: 16.0,
                       ),
                     ),
-                    const SizedBox(
-                      height: 3.0,
-                    ),
+                    const SizedBox(height: 3.0),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
