@@ -1,5 +1,5 @@
-import '../helper/api.dart';
-import '../models/product_model.dart';
+import 'package:store/helper/api.dart';
+import 'package:store/models/product_model.dart';
 
 class CategoriesService {
   Future<List<ProductModel>> getCategoriesProducts(
@@ -9,8 +9,11 @@ class CategoriesService {
 
     List<ProductModel> productsList = [];
     for (int i = 0; i < data.length; i++) {
-      productsList.add(ProductModel.fromJson(data[i]));
+      productsList.add(
+        ProductModel.fromJson(data[i]),
+      );
     }
+
     return productsList;
   }
 }

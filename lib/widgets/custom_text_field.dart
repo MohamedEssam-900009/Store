@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
-// ignore: must_be_immutable
 class CustomTextField extends StatelessWidget {
   CustomTextField({
     super.key,
     this.hintText,
+    this.inputType,
     this.onChanged,
     this.obscureText = false,
-    this.inputType,
   });
 
   Function(String)? onChanged;
   String? hintText;
-  bool? obscureText;
   TextInputType? inputType;
+  bool? obscureText;
+  
   @override
   Widget build(BuildContext context) {
     return TextField(
@@ -24,11 +24,11 @@ class CustomTextField extends StatelessWidget {
         hintText: hintText,
         enabledBorder: OutlineInputBorder(
           borderSide: const BorderSide(),
-          borderRadius: BorderRadius.circular(8.0),
+          borderRadius: BorderRadius.circular(8),
         ),
         border: OutlineInputBorder(
           borderSide: const BorderSide(),
-          borderRadius: BorderRadius.circular(8.0),
+          borderRadius: BorderRadius.circular(8),
         ),
       ),
     );
