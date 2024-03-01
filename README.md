@@ -1,16 +1,5 @@
-# store
+# Store
+The project is a simple e-commerce store application developed by Me. It is hosted on GitHub and allows users to browse and update products.
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Screen Shoot
+![Apple iPhone 11 Presentation (2)](https://github.com/MohamedEssam-900009/store/assets/77198018/ba3a3937-13ba-46c6-9e50-8f2cc60106b8)
