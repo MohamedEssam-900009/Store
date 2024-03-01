@@ -4,7 +4,10 @@ import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 class Api {
-  Future<dynamic> get({required String url, @required String? token}) async {
+  Future<dynamic> get({
+    required String url,
+    String? token,
+  }) async {
     Map<String, String> headers = {};
 
     if (token != null) {
@@ -23,7 +26,7 @@ class Api {
   Future<dynamic> post({
     required String url,
     @required dynamic body,
-    @required String? token,
+    String? token,
   }) async {
     Map<String, String> headers = {};
 
@@ -42,10 +45,11 @@ class Api {
     }
   }
 
-  Future<dynamic> put(
-      {required String url,
-      @required dynamic body,
-      @required String? token}) async {
+  Future<dynamic> put({
+    required String url,
+    @required dynamic body,
+    String? token,
+  }) async {
     Map<String, String> headers = {};
     headers.addAll({'Content-Type': 'application/x-www-form-urlencoded'});
     if (token != null) {
