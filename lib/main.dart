@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:store/screens/home_page.dart';
-import 'package:store/screens/update_product_page.dart';
+import 'screens/home_page.dart';
+import 'screens/update_product_page.dart';
 
 void main() {
   runApp(const StoreApp());

@@ -1,4 +1,4 @@
-import 'package:store/helper/api.dart';
+import '../helper/api.dart';
 
 class AllCategoriesService {
   Future<List<dynamic>> getAllCateogires() async {

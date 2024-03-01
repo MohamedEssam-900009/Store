@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-import 'package:store/models/product_model.dart';
-import 'package:store/services/update_product.dart';
-import 'package:store/widgets/custom_button.dart';
-import 'package:store/widgets/custom_text_field.dart';
+import '../models/product_model.dart';
+import '../services/update_product.dart';
+import '../widgets/custom_button.dart';
+import '../widgets/custom_text_field.dart';
 
 class UpdateProductPage extends StatefulWidget {
   static String id = 'update product';
